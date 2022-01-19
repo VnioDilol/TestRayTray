@@ -1,9 +1,6 @@
 # TestRayTray
 Little project on Python and PyGame
-  GNU nano 6.0                                    README.md                                             
-TestRayTray
-Little project on Python and PyGame
-
+                             
 1) If you need to start programm use Python 
 windows: python main.py
 linux/mac: python3 main.py
