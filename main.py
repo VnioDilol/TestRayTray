@@ -1,7 +1,9 @@
 import pygame
+from player import *
 
 res = wd, hi = 800, 600
-play_pos = 400, 300
+center_pos = 400, 300
+player = Player(center_pos)
 
 class MAP:
 	def __init__(self,app):
@@ -10,8 +12,9 @@ class MAP:
 		self.map_text = (
 			'#######',
 			'#.....#',
-			'#.#...#',
-			'#..##.#',
+			'#.....#',
+			'#..#..#',
+			'#..#..#',
 			'#..#..#',
 			'#######'
 			)
@@ -27,6 +30,7 @@ class MAP:
 	def draw(self):
 		for pos in self.map_pos:
 			pygame.draw.rect(self.screen,self.color,(* pos,25,25),2) 
+			pygame.draw.rect(self.screen,'green',(player.x / 4 - 5, player.y / 4 - 5, 10, 10),1) 
 			#print(pos)
 
 class App:
@@ -36,10 +40,11 @@ class App:
 
 	def run(self):
 		map1 = MAP(app)
-		map1.draw()
 		while True:
+			player.move()
+			map1.draw()
 			pygame.display.flip()
-			#self.sc.fill('black')
+			self.sc.fill('black')
 			for event in pygame.event.get():
 				if event.type == pygame.QUIT:
 					exit()
