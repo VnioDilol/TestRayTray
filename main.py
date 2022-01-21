@@ -11,10 +11,10 @@ class App:
 
 
 	def run(self):
-		map1 = MAP(app, player)
+		map1 = MAP()
 		while True:
 			player.move()
-			map1.draw()
+			map1.draw(app, player)
 			pygame.display.flip()
 			self.sc.fill('black')
 			for event in pygame.event.get():

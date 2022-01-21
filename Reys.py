@@ -1,5 +1,7 @@
 import pygame
 import math
-from main import map1
+from Map import *
 
-print(map1)
+map2 = MAP()
+
+#print(map2.map_pos)
